@@ -13,8 +13,8 @@ This is a backend API for a to-do app, built using Node.js, Express, and MongoDB
 `cors`: for cross-origin resource sharing  
 `dotenv`: for environment variable management  
 `express`: for building the API  
+`mongoose`: for MongoDB interaction      
 `jsonwebtoken`: for JSON Web Token authentication  
-`mongoose`: for MongoDB interaction  
 `passport`: for authentication middleware  
 `passport-jwt`: for JWT strategy
 
