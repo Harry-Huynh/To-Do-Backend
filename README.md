@@ -22,7 +22,7 @@ This is a backend API for a to-do app, built using Node.js, Express, and MongoDB
 
 ### User Endpoints
 
-` POST /api/user/register`: Register a new user  
+`POST /api/user/register`: Register a new user  
 `POST /api/user/login`: Login an existing user
 
 ### Task Endpoints
@@ -48,5 +48,5 @@ The API uses the following environment variables:
 
 Clone the repository: `git clone https://github.com/Harry-Huynh/To-Do-Backend.git`  
 Install dependencies: `npm install`  
-Create a `.env` file with the required environment variables
+Create a `.env` file with the required environment variables  
 Start the API server: `node server.js`
