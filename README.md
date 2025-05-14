@@ -9,11 +9,11 @@ This is a backend API for a to-do app, built using Node.js, Express, and MongoDB
 
 # Dependencies
 
-`bcryptjs` : for password hashing  
+`bcryptjs`: for password hashing  
 `cors`: for cross-origin resource sharing  
 `dotenv`: for environment variable management  
 `express`: for building the API  
-`mongoose`: for MongoDB interaction      
+`mongoose`: for MongoDB interaction  
 `jsonwebtoken`: for JSON Web Token authentication  
 `passport`: for authentication middleware  
 `passport-jwt`: for JWT strategy
