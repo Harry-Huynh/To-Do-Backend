@@ -1,52 +1,83 @@
-# License
+# 🗂️ To-Do App Backend API
+
+![Node.js](https://img.shields.io/badge/Node.js-23.11.0-green?logo=node.js)
+![Express](https://img.shields.io/badge/Express.js-Backend-blue?logo=express)
+![MongoDB](https://img.shields.io/badge/MongoDB-Database-brightgreen?logo=mongodb)
+![JWT](https://img.shields.io/badge/JWT-Auth-orange?logo=jsonwebtokens)
+![License](https://img.shields.io/badge/ISC-License-lightgrey)
+![Deploy-Vercel](https://img.shields.io/badge/Vercel-Deployed-black?logo=vercel)
+
+A RESTful backend API for a to-do application, built with **Node.js**, **Express**, and **MongoDB**. The API handles user authentication, authorization, and CRUD operations on tasks. Authentication is handled securely via **JWT**.
+
+---
+
+## 📄 License
 
 > Copyright (c) 2025 Hoang Phuc Huynh  
 > This project is licensed under the ISC License.
 
-# Overview
+---
 
-This is a backend API for a to-do app, built using Node.js, Express, and MongoDB. The API provides endpoints for user registration, login, and task management.
+## 🚀 Overview
 
-# Dependencies
+This backend provides the core API for a to-do application. It exposes API endpoints for:
 
-`bcryptjs`: for password hashing  
-`cors`: for cross-origin resource sharing  
-`dotenv`: for environment variable management  
-`express`: for building the API  
-`mongoose`: for MongoDB interaction  
-`jsonwebtoken`: for JSON Web Token authentication  
-`passport`: for authentication middleware  
-`passport-jwt`: for JWT strategy
+- ✅ User registration and login
+- 📋 Creating, reading, updating, and deleting tasks
+- 🔐 Protecting user routes with JWT authentication
 
-# API Endpoints
+---
 
-### User Endpoints
+## 🔗 Project Links
 
-`POST /api/user/register`: Register a new user  
-`POST /api/user/login`: Login an existing user
+- 🖥️ Frontend Repository: [To-Do Frontend (Next.js)](https://github.com/Harry-Huynh/To-Do-Frontend)
+- 🌐 Live Website: [Visit the App](https://to-do-app-frontend-tawny-delta.vercel.app/)
 
-### Task Endpoints
+---
 
-`GET /api/user/tasks`: Get all tasks for a logged-in user  
-`POST /api/user/tasks`: Add a new task for a logged-in user  
-`PUT /api/user/tasks/:id`: Update a task for a logged-in user  
-`DELETE /api/user/tasks/:id`: Delete a task for a logged-in user
+## 📦 Dependencies
 
-# Authentication
+| Package        | Purpose                                |
+| -------------- | -------------------------------------- |
+| `express`      | Web framework for building the API     |
+| `mongoose`     | MongoDB object modeling and connection |
+| `bcryptjs`     | Hashing user passwords securely        |
+| `jsonwebtoken` | Creating and verifying JWTs            |
+| `passport`     | Middleware for handling authentication |
+| `passport-jwt` | JWT strategy for Passport              |
+| `dotenv`       | Managing environment variables         |
+| `cors`         | Enabling cross-origin requests         |
 
-The API uses `JSON Web Token (JWT) authentication`. When a user logs in, a JWT token is generated and returned in the response. This token must be included in the Authorization header for all subsequent requests.
+---
 
-# Environment Variables
+## 🌐 API Endpoints
 
-The API uses the following environment variables:
+### 👤 User Endpoints
 
-`MONGO_URL`: the MongoDB connection string  
-`JWT_SECRET`: the secret key for JWT signing  
-`PORT`: the port number for the API server
+| Method | Endpoint             | Description             |
+| ------ | -------------------- | ----------------------- |
+| POST   | `/api/user/register` | Register a new user     |
+| POST   | `/api/user/login`    | Login and receive token |
 
-# Setup
+### ✅ Task Endpoints (Protected)
 
-Clone the repository: `git clone https://github.com/Harry-Huynh/To-Do-Backend.git`  
-Install dependencies: `npm install`  
-Create a `.env` file with the required environment variables  
-Start the API server: `node server.js`
+All task endpoints require a valid JWT in the `Authorization` header:
+
+| Method | Endpoint              | Description                |
+| ------ | --------------------- | -------------------------- |
+| GET    | `/api/user/tasks`     | Get all tasks for the user |
+| POST   | `/api/user/tasks`     | Add a new task             |
+| PUT    | `/api/user/tasks/:id` | Update a specific task     |
+| DELETE | `/api/user/tasks/:id` | Delete a specific task     |
+
+---
+
+## 🔐 Authentication
+
+- Authentication is managed via **JWT (JSON Web Tokens)**.
+- After login, the server returns a signed JWT.
+- The client must include this token in the `Authorization` header for protected requests:
+
+```http
+Authorization: JWT <your_token>
+```
