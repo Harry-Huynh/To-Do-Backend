@@ -18,6 +18,18 @@ A RESTful backend API for a to-do application, built with **Node.js**, **Express
 
 ---
 
+## 📚 Table of Contents
+
+- [🚀 Overview](#-overview)
+- [🔗 Project Links](#-project-links)
+- [📦 Dependencies](#-dependencies)
+- [🌐 API Endpoints](#-api-endpoints)
+  - [👤 User Endpoints](#-user-endpoints)
+  - [✅ Task Endpoints (Protected)](#-task-endpoints-protected)
+- [🔐 Authentication](#-authentication)
+
+---
+
 ## 🚀 Overview
 
 This backend provides the core API for a to-do application. It exposes API endpoints for:
